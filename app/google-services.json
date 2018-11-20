@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "883187168507",
+    "firebase_url": "https://sosprofessores-e6b5f.firebaseio.com",
+    "project_id": "sosprofessores-e6b5f",
+    "storage_bucket": "sosprofessores-e6b5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883187168507:android:d401742c58854bd2",
+        "android_client_info": {
+          "package_name": "com.br.fatec.sos_professores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883187168507-8j49ekhlr54cmtkiu7fmf902kn4f5bpi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.fatec.sos_professores",
+            "certificate_hash": "087a85254d1ff524d786f9510b279bdebb30a85a"
+          }
+        },
+        {
+          "client_id": "883187168507-rea6f0nriikl7r4dkf0iej3lvcli1ec6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwKh6AhZqlUeRIXdTZe88RYa7hL9Kf20Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883187168507-rea6f0nriikl7r4dkf0iej3lvcli1ec6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
