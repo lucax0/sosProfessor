@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:shadowColor="@color/colorAccent"
-        android:text="TextView"
+        android:text="AREA DE LOGIN"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorPrimary"
