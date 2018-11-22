@@ -10,10 +10,10 @@ public abstract class Usuario {
     protected String nome;
     protected Date dtNasc;
     protected char sexo;
-    protected char[] cep = new char[9];
-    protected char[] cel = new char[9];
+    protected String cep;
+    protected String cel;
 
-    public Usuario(int id, String email, String senha, String nome, Date dtNasc, char sexo, char[] cep, char[] cel) {
+    public Usuario(int id, String email, String senha, String nome, Date dtNasc, char sexo, String cep, String cel) {
         this.id = id;
         this.email = email;
         this.senha = senha;
@@ -75,19 +75,19 @@ public abstract class Usuario {
         this.sexo = sexo;
     }
 
-    public char[] getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(char[] cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
-    public char[] getCel() {
+    public String getCel() {
         return cel;
     }
 
-    public void setCel(char[] cel) {
+    public void setCel(String cel) {
         this.cel = cel;
     }
 }

@@ -60,7 +60,6 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }
@@ -83,6 +82,21 @@ public class loginActivity extends AppCompatActivity {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
+        }
+
+        if(TextUtils.isEmpty((password))){
+            mPasswordView.setError(getString(R.string.error_field_required));
+            focusView = mPasswordView;
+            cancel = true;
+        } else if (!isPasswordValid(password)){
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
+        if(!cancel){
+            //Procedimentos de login
+
         }
     }
 }
