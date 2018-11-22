@@ -105,10 +105,12 @@ public class loginActivity extends AppCompatActivity {
         if(TextUtils.isEmpty((password))){
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
+            mPasswordView.setText("");
             cancel = true;
         } else if (!isPasswordValid(password)){
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
+            mPasswordView.setText("");
             cancel = true;
         }
 
@@ -122,7 +124,7 @@ public class loginActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("login", "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.d("login", "signInWithEmail:failure", task.getException());
