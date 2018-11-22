@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,6 +35,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.br.fatec.sos_professores.R;
 
 public class loginActivity extends AppCompatActivity {
@@ -44,22 +50,16 @@ public class loginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // Set up the login form.
+
+        //CARREGANDO VIEW
         mEmailView = (EditText) findViewById(R.id.txt_email);
         mPasswordView = (EditText) findViewById(R.id.txt_senha);
         mAuth = FirebaseAuth.getInstance();
 
+        //BOTOES
        Button btn_entrar = (Button) findViewById(R.id.btn_entar);
         btn_entrar.setOnClickListener(new OnClickListener() {
             @Override
@@ -67,7 +67,15 @@ public class loginActivity extends AppCompatActivity {
                 login();
             }
         });
+    }
 
+    // [START on_start_check_user]
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
     }
 
     private boolean isEmailValid(String email) {
@@ -106,7 +114,22 @@ public class loginActivity extends AppCompatActivity {
 
         if(!cancel){
             //Procedimentos de login
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("login", "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.d("login", "signInWithEmail:failure", task.getException());
 
+                            }
+                        }
+                    });
         }
     }
 }
