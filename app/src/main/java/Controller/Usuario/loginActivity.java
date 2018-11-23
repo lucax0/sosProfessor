@@ -1,5 +1,6 @@
 package Controller.Usuario;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.animation.Animator;
@@ -121,10 +122,9 @@ public class loginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d("login", "signInWithEmail:success");
+                                Intent it = new Intent(loginActivity.this, perfilActivity.class);
                                 FirebaseUser user = mAuth.getCurrentUser();
-
+                                startActivity(it);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.d("login", "signInWithEmail:failure", task.getException());
