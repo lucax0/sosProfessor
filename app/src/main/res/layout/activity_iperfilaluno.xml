@@ -65,7 +65,7 @@
         tools:layout_editor_absoluteY="326dp" />
 
     <AutoCompleteTextView
-        android:id="@+id/txt_email2"
+        android:id="@+id/txt_email"
         android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView6"
