@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -36,6 +37,7 @@ public class cadastroActivity extends AppCompatActivity {
     private EditText mDataView;
     private EditText mTelefoneView;
 
+
     private boolean existeUsuario;
     String identificacaoUsuario;
 
@@ -45,13 +47,23 @@ public class cadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
         mNomeView = findViewById(R.id.txt_nome);
         mEmailView =  findViewById(R.id.txt_email);
         mPasswordView =  findViewById(R.id.txt_senha);
         mSexoView = findViewById(R.id.rdn_grupS);
         mDataView = findViewById(R.id.txt_nasc);
         mTelefoneView = findViewById(R.id.txt_num);
+        Button btn_salvar = findViewById(R.id.btn_submit);
+            btn_salvar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    criarModel();
+                }
+            });
     }
+
+
 
     protected void criarModel(){
         Usuario usuario = new Usuario() {
@@ -92,7 +104,6 @@ public class cadastroActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.d("login", "signInWithEmail:failure", task.getException());
-
                     }
                 }
             });
