@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Controller.Usuario.cadastroActivity">
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="35dp"
+        android:textColor="@android:color/holo_red_dark"
+        tools:text="CANCELAR" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="383dp"
+        android:layout_height="48dp"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:shadowColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="CADASTRO" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Como gostaria de ser chamado?" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="77dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Qual seu email?" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="192dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Qual dia você nasceu?" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="267dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Qual seu numero de telefone? (Celular)" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="338dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Pshh. Digite sua senha:" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="155dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        tools:text="Sexo:" />
+
+    <EditText
+        android:id="@+id/txt_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:ems="10"
+        android:hint="EX:Fulano De Beltrano"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="fulano@provedor.com"
+        android:inputType="textEmailAddress" />
+
+    <RadioButton
+        android:id="@+id/rdn_masc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="-6dp"
+        android:text="Masculino" />
+
+    <RadioButton
+        android:id="@+id/rdn_fem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="-5dp"
+        android:text="Feminino" />
+
+    <RadioGroup
+        android:id="@+id/rdn_grupS"
+        android:layout_width="319dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="-10dp" />
+
+    <EditText
+        android:id="@+id/txt_nasc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView16"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="10/10/1999"
+        android:inputType="time" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="11955554444"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView25"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="Somente Numeros"
+        android:inputType="numberPassword" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="35dp"
+        android:textColor="@android:color/holo_green_dark"
+        tools:text="SALVAR" />
+
+</RelativeLayout>

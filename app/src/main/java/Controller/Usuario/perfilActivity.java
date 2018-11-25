@@ -25,7 +25,6 @@ public class perfilActivity extends AppCompatActivity {
     private TextView mNome;//Chamando o campo da view
     private String email , nome;
     private Query databaseReference;
-    Usuario usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +46,11 @@ public class perfilActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                System.out.println("entrou");
                 System.out.println(dataSnapshot.getKey());
                 System.out.println(dataSnapshot.getValue());
-                usuario = dataSnapshot.getValue(Usuario.class);
-                //System.out.println(usuario.getNome());
+                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                System.out.println(usuario.getNome());
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

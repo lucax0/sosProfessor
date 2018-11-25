@@ -31,8 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginRight="0dp"
         android:ems="10"
         android:hint="EMAIL"
         android:inputType="textEmailAddress" />
@@ -42,7 +44,9 @@
         android:layout_width="349dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txt_email"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="177dp"
         android:ems="10"
         android:hint="SENHA"
         android:inputType="textPassword" />
