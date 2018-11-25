@@ -14,16 +14,18 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="225dp"
         android:layout_marginBottom="35dp"
+        android:text="CANCELAR"
         android:textColor="@android:color/holo_red_dark"
         tools:text="CANCELAR" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="383dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@android:color/darker_gray"
         android:gravity="center"
         android:shadowColor="@color/colorAccent"
+        android:text="CADASTRO"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -41,7 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView10"
         android:layout_alignParentStart="true"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Como gostaria de ser chamado?"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Como gostaria de ser chamado?" />
 
@@ -53,7 +56,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="77dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Qual seu email?"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Qual seu email?" />
 
@@ -65,7 +69,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="192dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Qual dia você nasceu?"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Qual dia você nasceu?" />
 
@@ -77,7 +82,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="267dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Qual seu numero de telefone? (Celular)"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Qual seu numero de telefone? (Celular)" />
 
@@ -89,7 +95,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="338dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Pshh. Digite sua senha:"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Pshh. Digite sua senha:" />
 
@@ -101,7 +108,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="3dp"
         android:layout_marginTop="155dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Sexo:"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         tools:text="Sexo:" />
 
@@ -120,7 +128,7 @@
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView13"
@@ -137,7 +145,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="69dp"
         android:layout_marginTop="-6dp"
-        android:text="Masculino" />
+        tools:text="Masculino" />
 
     <RadioButton
         android:id="@+id/rdn_fem"
@@ -147,7 +155,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="184dp"
         android:layout_marginTop="-5dp"
-        android:text="Feminino" />
+        tools:text="Feminino" />
 
     <RadioGroup
         android:id="@+id/rdn_grupS"
@@ -169,7 +177,7 @@
         android:inputType="time" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txt_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView24"
@@ -179,7 +187,7 @@
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txt_senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView25"
@@ -196,6 +204,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="35dp"
+        android:text="SALVAR"
         android:textColor="@android:color/holo_green_dark"
         tools:text="SALVAR" />
 

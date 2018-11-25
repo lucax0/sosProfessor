@@ -43,6 +43,13 @@ public class loginActivity extends AppCompatActivity {
                 login();
             }
         });
+       Button btn_cad = (Button) findViewById(R.id.btn_cadastro);
+        btn_cad.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cadastro();
+            }
+        });
     }
 
     // [START on_start_check_user]
@@ -107,5 +114,10 @@ public class loginActivity extends AppCompatActivity {
                         }
                     });
         }
+    }
+
+    protected void cadastro(){
+        Intent it = new Intent(loginActivity.this, cadastroActivity.class);
+        startActivity(it);
     }
 }
