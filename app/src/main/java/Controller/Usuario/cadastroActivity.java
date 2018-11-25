@@ -47,13 +47,7 @@ public class cadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
-        mNomeView = findViewById(R.id.txt_nome);
-        mEmailView =  findViewById(R.id.txt_email);
-        mPasswordView =  findViewById(R.id.txt_senha);
-        mSexoView = findViewById(R.id.rdn_grupS);
-        mDataView = findViewById(R.id.txt_nasc);
-        mTelefoneView = findViewById(R.id.txt_num);
+        incialiazarCampos();
         Button btn_salvar = findViewById(R.id.btn_submit);
             btn_salvar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -63,7 +57,14 @@ public class cadastroActivity extends AppCompatActivity {
             });
     }
 
-
+    public void incialiazarCampos(){
+        mNomeView = findViewById(R.id.txt_nome);
+        mEmailView =  findViewById(R.id.txt_email);
+        mPasswordView =  findViewById(R.id.txt_senha);
+        mSexoView = findViewById(R.id.rdn_grupS);
+        mDataView = findViewById(R.id.txt_nasc);
+        mTelefoneView = findViewById(R.id.txt_num);
+    }
 
     protected void criarModel(){
         Usuario usuario = new Usuario() {
