@@ -6,7 +6,7 @@ public class Aluno extends Usuario {
     protected float indiceFalta;
 //CONSTRUTORES
 
-    public Aluno(int id, String email, String senha, String nome, Date dtNasc, char sexo, String cep, String cel, float indiceFalta) {
+    public Aluno(String id, String email, String senha, String nome, Date dtNasc, char sexo, String cep, String cel, float indiceFalta) {
         super(id, email, senha, nome, dtNasc, sexo, cep, cel);
         this.indiceFalta = indiceFalta;
     }
