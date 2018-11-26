@@ -1,20 +1,19 @@
 package Model.Usuario;
 
 import java.util.Date;
-import java.util.LinkedList;
 
 public class Professor extends Usuario {
 
     private float nota;
-    private LinkedList<String> graduacao;
+    private String graduacao;
 
-    public Professor(String id, String email, String senha, String nome, Date dtNasc, String sexo, String cep, String cel, float nota, LinkedList<String> graduacao) {
+    public Professor(String id, String email, String senha, String nome, Date dtNasc, String sexo, String cep, String cel, float nota, String graduacao) {
         super(id, email, senha, nome, dtNasc, sexo, cep, cel);
         this.nota = nota;
         this.graduacao = graduacao;
     }
 
-    public Professor(float nota, LinkedList<String> graduacao) {
+    public Professor(float nota, String graduacao) {
         this.nota = nota;
         this.graduacao = graduacao;
     }
@@ -27,11 +26,11 @@ public class Professor extends Usuario {
         this.nota = nota;
     }
 
-    public LinkedList<String> getGraduacao() {
+    public String getGraduacao() {
         return graduacao;
     }
 
-    public void setGraduacao(LinkedList<String> graduacao) {
+    public void setGraduacao(String graduacao) {
         this.graduacao = graduacao;
     }
 }
