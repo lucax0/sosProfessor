@@ -9,6 +9,9 @@
         android:id="@+id/textView2"
         android:layout_width="383dp"
         android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
         android:gravity="center"
         android:shadowColor="@color/colorAccent"
         android:text="@string/bem_vindo"
@@ -68,7 +71,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="77dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="322dp"
         android:onClick="btn_ser_professorOnClick"
         android:text="@string/quero_ser_professor" />
 
@@ -88,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="207dp"
+        android:layout_marginBottom="254dp"
         android:onClick="btn_encontrarOnClick"
         android:text="@string/quero_encontrar_professor" />
 

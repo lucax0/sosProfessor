@@ -8,50 +8,67 @@
     tools:context="com.example.aluno.myapplication.ICadastroProfessor">
 
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nome do curso"
-        android:id="@+id/lblNmCurso"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Como professor seus alunos vao poder te avaliar, com isso em mente sua nota incial é 5 que é a nota maxima do sistema."
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="Como professor seus alunos vao poder te avaliar, com isso em mente sua nota incial é 5 que é a nota maxima do sistema." />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Nos conte qual é a materia em que você pode lecionar:"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="Nos conte qual é a materia em que você pode lecionar:" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:id="@+id/editText"
+        android:layout_width="313dp"
         android:layout_height="wrap_content"
-        android:id="@+id/txtNmCurso"
-        android:layout_below="@+id/lblNmCurso"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/btnAdicionar"
-        android:layout_toStartOf="@+id/btnAdicionar" />
+        android:layout_below="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:ems="10"
+        android:hint="Ex:Geografia"
+        android:inputType="text" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_salvar"
+        android:layout_width="307dp"
         android:layout_height="wrap_content"
-        android:text="Adicionar"
-        android:id="@+id/btnAdicionar"
-        android:layout_alignBottom="@+id/txtNmCurso"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_below="@+id/btnAdicionar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="60dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finalizar"
-        android:id="@+id/btnFinalizar"
+        android:layout_alignStart="@+id/textView6"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/listView"
-        android:layout_alignEnd="@+id/listView" />
+        android:layout_marginBottom="82dp"
+        android:text="Quero me tornar um professor"
+        tools:text="Quero me tornar um professor" />
+
+    <Button
+        android:id="@+id/btn_voltar"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="39dp"
+        android:text="Desistir"
+        tools:text="Desistir" />
 </RelativeLayout>
