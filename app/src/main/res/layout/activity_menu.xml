@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="Controller.Usuario.menuActivity">
 
     <TextView
         android:id="@+id/textView5"
@@ -23,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView5"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/ver_perfil" />
 
     <Button
