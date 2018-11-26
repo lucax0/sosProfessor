@@ -63,12 +63,12 @@
 
     <Button
         android:id="@+id/btn_ser_professor"
-        android:layout_width="wrap_content"
+        android:layout_width="231dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="194dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="320dp"
         android:onClick="btn_ser_professorOnClick"
         android:text="@string/quero_ser_professor" />
 
@@ -78,8 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="271dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/deslogar" />
 
     <Button
@@ -99,7 +99,7 @@
         android:layout_alignTop="@+id/btn_deslogar"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="271dp"
+        android:layout_marginEnd="19dp"
         android:onClick="btn_menuOnClick"
         android:text="@string/menu" />
 </RelativeLayout>
