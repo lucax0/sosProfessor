@@ -61,4 +61,43 @@
         android:layout_marginTop="44dp"
         android:layout_toEndOf="@+id/textView8"
         android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_ser_professor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="194dp"
+        android:text="QUERO SER PROFESSOR" />
+
+    <Button
+        android:id="@+id/btn_deslogar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="271dp"
+        android:layout_marginBottom="22dp"
+        android:text="DESLOGAR" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="207dp"
+        android:text="QUERO ENCONTRAR PROFESSOR" />
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_deslogar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="271dp"
+        android:text="MENU" />
 </RelativeLayout>
