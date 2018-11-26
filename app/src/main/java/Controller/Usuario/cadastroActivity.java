@@ -27,17 +27,12 @@ import Model.Usuario.Usuario;
 
 public class cadastroActivity extends AppCompatActivity {
 
-    private EditText mEmailView;
-    private EditText mPasswordView;
-    private EditText mNomeView;
-    private RadioGroup mSexoView;
-    private EditText mDataView;
-    private EditText mTelefoneView;
+    private EditText mEmailView ,mPasswordView, mNomeView,mDataView, mTelefoneView;
 
 
     private boolean existeUsuario;
     String identificacaoUsuario;
-
+    //instancia banco
     private FirebaseAuth mAuth;
 
     @Override
@@ -58,7 +53,6 @@ public class cadastroActivity extends AppCompatActivity {
         mNomeView = findViewById(R.id.txt_nome);
         mEmailView =  findViewById(R.id.txt_email);
         mPasswordView =  findViewById(R.id.txt_senha);
-        mSexoView = findViewById(R.id.rdn_grupS);
         mDataView = findViewById(R.id.txt_nasc);
         mTelefoneView = findViewById(R.id.txt_num);
     }

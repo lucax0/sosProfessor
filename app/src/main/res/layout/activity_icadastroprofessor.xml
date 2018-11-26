@@ -42,7 +42,7 @@
         tools:text="Nos conte qual é a materia em que você pode lecionar:" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txt_grad"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView6"
@@ -52,7 +52,7 @@
         android:inputType="text" />
 
     <Button
-        android:id="@+id/btn_salvar"
+        android:id="@+id/btn_submit"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView6"

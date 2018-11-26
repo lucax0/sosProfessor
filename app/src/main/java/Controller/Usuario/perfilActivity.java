@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class perfilActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView mNome , mEmail;//Chamando o campo da view
     private Query databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,14 @@ public class perfilActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.txt_email);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        Button btn_prof = findViewById(R.id.btn_ser_professor);
+            btn_prof.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent it = new Intent(perfilActivity.this, cadastroProfActivity.class);
+                    startActivity(it);
+                }
+            });
     }
 
     @Override
@@ -46,9 +56,6 @@ public class perfilActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                System.out.println("entrou");
-                System.out.println(dataSnapshot.getKey());
-                System.out.println(dataSnapshot.getValue());
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
                 System.out.println(usuario.getNome());
                 carregarCampos(usuario);
@@ -61,16 +68,11 @@ public class perfilActivity extends AppCompatActivity {
         });
     }
 
-
     public void carregarCampos(Usuario usuario){
         mNome.setText(usuario.getNome());
         mEmail.setText(usuario.getEmail());
     }
-    public void btn_ser_professorOnClick(View v){
-        Intent it = new Intent(perfilActivity.this, cadastroActivity.class);
-        startActivity(it);
 
-    }
     public void btn_encontrarOnClick(View v){
         Intent it = new Intent(perfilActivity.this, cadastroActivity.class);
         startActivity(it);

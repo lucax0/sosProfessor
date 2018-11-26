@@ -7,6 +7,9 @@ public class Professor extends Usuario {
     private float nota;
     private String graduacao;
 
+    public Professor() {
+    }
+
     public Professor(String id, String email, String senha, String nome, Date dtNasc, String sexo, String cep, String cel, float nota, String graduacao) {
         super(id, email, senha, nome, dtNasc, sexo, cep, cel);
         this.nota = nota;
