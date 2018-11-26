@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 
 import com.br.fatec.sos_professores.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,6 +34,7 @@ public class cadastroProfActivity extends AppCompatActivity {
     private Query databaseReference;
     private EditText mGraduacao;
     private Usuario usuario;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,5 +84,28 @@ public class cadastroProfActivity extends AppCompatActivity {
             professor.setSenha(usuario.getSexo());
             professor.setNota(5);
             professor.setGraduacao(mGraduacao.getText().toString());
+            criarUsuarioProfessor(professor);
     }
+
+    protected void criarUsuarioProfessor(final Professor professor) {
+        mAuth = FirebaseAuth.getInstance();
+        //Passando infos banco
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference DB = database.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
+        DB.child("id").setValue(mAuth.getCurrentUser().getUid());
+        DB.child("email").setValue(professor.getEmail());
+        DB.child("senha").setValue(professor.getSenha());
+        DB.child("nome").setValue(professor.getNome());
+        DB.child("dtNasc").setValue(professor.getDtNasc());
+        DB.child("sexo").setValue(professor.getSexo());
+        DB.child("cep").setValue(professor.getCep());
+        DB.child("cel").setValue(professor.getCel());
+        DB.child("graduacao").setValue(professor.getGraduacao());
+        DB.child("nota").setValue(professor.getNota());
+        //Chamando view perfil
+        Intent it = new Intent(cadastroProfActivity.this, perfilActivity.class);
+        FirebaseUser user = mAuth.getCurrentUser();
+        startActivity(it);
+    }
+    
 }
