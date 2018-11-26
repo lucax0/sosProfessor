@@ -12,4 +12,22 @@ import android.widget.Button;
 
 
 public class menuActivity {
+
+
+    public void btn_perfilOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, menuActivity.class);
+        startActivity(it);
+
+    }
+    public void btn_aulaOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, menuActivity.class);
+        startActivity(it);
+
+    }
+    public void btn_professorOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, menuActivity.class);
+        startActivity(it);
+
+    }
+
 }

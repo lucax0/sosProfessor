@@ -1,7 +1,9 @@
 package Controller.Usuario;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -63,5 +65,20 @@ public class perfilActivity extends AppCompatActivity {
     public void carregarCampos(Usuario usuario){
         mNome.setText(usuario.getNome());
         mEmail.setText(usuario.getEmail());
+    }
+    public void btn_ser_professorOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, cadastroActivity.class);
+        startActivity(it);
+
+    }
+    public void btn_encontrarOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, cadastroActivity.class);
+        startActivity(it);
+
+    }
+    public void btn_menuOnClick(View v){
+        Intent it = new Intent(perfilActivity.this, menuActivity.class);
+        startActivity(it);
+
     }
 }

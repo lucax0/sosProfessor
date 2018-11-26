@@ -104,4 +104,16 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="deslogar">DESLOGAR</string>
+    <string name="menu">MENU</string>
+    <string name="bem_vindo">BEM VINDO!</string>
+    <string name="ol">Olá:</string>
+    <string name="seu_email">Seu email é:</string>
+    <string name="quero_ser_professor">QUERO SER PROFESSOR</string>
+    <string name="quero_encontrar_professor">QUERO ENCONTRAR PROFESSOR</string>
+    <string name="menu">MENU</string>
+    <string name="ver_perfil">VER PERFIL</string>
+    <string name="deslogar">DESLOGAR</string>
+    <string name="encontrar_professor">ENCONTRAR PROFESSOR</string>
+    <string name="ver_aulas">VER AULAS</string>
 </resources>

@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="134dp"
         android:layout_marginTop="26dp"
-        android:text="MENU"
+        android:text="@string/menu"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
@@ -24,7 +24,7 @@
         android:layout_alignEnd="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
-        android:text="VER PERFIL" />
+        android:text="@string/ver_perfil" />
 
     <Button
         android:id="@+id/btn_aula"
@@ -34,7 +34,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="173dp"
-        android:text="VER AULAS" />
+        android:text="@string/ver_aulas" />
 
     <Button
         android:id="@+id/btn_professor"
@@ -44,7 +44,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-44dp"
         android:layout_marginBottom="220dp"
-        android:text="ENCONTRAR PROFESSOR" />
+        android:text="@string/encontrar_professor" />
 
     <Button
         android:id="@+id/btn_deslogar"
@@ -54,6 +54,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="18dp"
         android:layout_marginBottom="19dp"
-        android:text="DESLOGAR" />
+        android:text="@string/deslogar" />
 
 </RelativeLayout>
