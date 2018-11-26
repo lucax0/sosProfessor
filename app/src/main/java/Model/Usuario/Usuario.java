@@ -9,11 +9,11 @@ public abstract class Usuario {
     protected String senha;
     protected String nome;
     protected Date dtNasc;
-    protected char sexo;
+    protected String sexo;
     protected String cep;
     protected String cel;
 
-    public Usuario(String id, String email, String senha, String nome, Date dtNasc, char sexo, String cep, String cel) {
+    public Usuario(String id, String email, String senha, String nome, Date dtNasc, String sexo, String cep, String cel) {
         this.id = id;
         this.email = email;
         this.senha = senha;
@@ -67,11 +67,11 @@ public abstract class Usuario {
         this.dtNasc = dtNasc;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

@@ -68,7 +68,7 @@
         android:layout_below="@+id/textView10"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="206dp"
         android:text="Qual dia você nasceu?"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -81,7 +81,7 @@
         android:layout_below="@+id/textView10"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="267dp"
+        android:layout_marginTop="281dp"
         android:text="Qual seu numero de telefone? (Celular)"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -94,7 +94,7 @@
         android:layout_below="@+id/textView10"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="338dp"
+        android:layout_marginTop="352dp"
         android:text="Pshh. Digite sua senha:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -137,34 +137,30 @@
         android:hint="fulano@provedor.com"
         android:inputType="textEmailAddress" />
 
-    <RadioButton
-        android:id="@+id/rdn_masc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView14"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="-6dp"
-        tools:text="Masculino" />
-
-    <RadioButton
-        android:id="@+id/rdn_fem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView14"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="-5dp"
-        tools:text="Feminino" />
-
     <RadioGroup
         android:id="@+id/rdn_grupS"
-        android:layout_width="319dp"
-        android:layout_height="40dp"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView14"
         android:layout_alignParentStart="true"
         android:layout_marginStart="59dp"
-        android:layout_marginTop="-10dp" />
+        android:layout_marginTop="-10dp">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/rdn_grupS"
+            android:layout_weight="1"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rdn_masc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RadioButton" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/txt_nasc"
@@ -172,6 +168,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView16"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:ems="10"
         android:hint="10/10/1999"
         android:inputType="time" />
@@ -182,6 +180,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView24"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:ems="10"
         android:hint="11955554444"
         android:inputType="phone" />
@@ -192,6 +192,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView25"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:ems="10"
         android:hint="Somente Numeros"
         android:inputType="numberPassword" />

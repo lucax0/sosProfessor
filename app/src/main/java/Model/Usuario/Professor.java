@@ -8,7 +8,7 @@ public class Professor extends Usuario {
     private float nota;
     private LinkedList<String> graduacao;
 
-    public Professor(String id, String email, String senha, String nome, Date dtNasc, char sexo, String cep, String cel, float nota, LinkedList<String> graduacao) {
+    public Professor(String id, String email, String senha, String nome, Date dtNasc, String sexo, String cep, String cel, float nota, LinkedList<String> graduacao) {
         super(id, email, senha, nome, dtNasc, sexo, cep, cel);
         this.nota = nota;
         this.graduacao = graduacao;

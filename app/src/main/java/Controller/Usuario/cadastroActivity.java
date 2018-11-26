@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -66,21 +63,58 @@ public class cadastroActivity extends AppCompatActivity {
         mTelefoneView = findViewById(R.id.txt_num);
     }
 
+    private boolean isEmailValid(String email) {
+        return email.contains("@");
+    }
+
+    private boolean isPasswordValid(String password) {return password.length() >= 6;
+    }
+
+    protected Boolean isCamposValidos() {
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+
+        if (TextUtils.isEmpty(email)) {
+            mEmailView.setError(getString(R.string.error_field_required));
+
+            return false;
+        } else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+
+            return false;
+        }
+
+        if (TextUtils.isEmpty((password))) {
+            mPasswordView.setError(getString(R.string.error_field_required));
+
+            mPasswordView.setText("");
+            return false;
+        } else if (!isPasswordValid(password)) {
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+
+            mPasswordView.setText("");
+            return false;
+        }
+        return true;
+    }
+
     protected void criarModel(){
         Usuario usuario = new Usuario() {
         };
+        if (isCamposValidos()) {
             usuario.setEmail(mEmailView.getText().toString());
             usuario.setNome(mNomeView.getText().toString());
             usuario.setCel(mTelefoneView.getText().toString());
             usuario.setEmail(mEmailView.getText().toString());
             usuario.setCep("09810360");
+            usuario.setSexo("Masculino");
             usuario.setDtNasc(new Date());
             usuario.setSenha(mPasswordView.getText().toString());
-            criar(usuario);
-
+            criarUsuario(usuario);
+        }
     }
 
-    protected void criar(final Usuario usuario){
+    protected void criarUsuario(final Usuario usuario){
         mAuth = FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -90,14 +124,15 @@ public class cadastroActivity extends AppCompatActivity {
                         //Passando infos banco
                         usuario.setId(mAuth.getCurrentUser().getUid());
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference ref = database.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
-                        ref.child("uid").setValue(mAuth.getCurrentUser().getUid());
-                        ref.child("nome").setValue(usuario.getNome());
-                        ref.child("email").setValue(usuario.getEmail());
-                        ref.child("senha").setValue(usuario.getSenha());
-                        ref.child("telefone").setValue(usuario.getCel());
-                        ref.child("cep").setValue(usuario.getCep());
-                        ref.child("dataNasc").setValue(usuario.getDtNasc());
+                        DatabaseReference DB = database.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
+                        DB.child("id").setValue(mAuth.getCurrentUser().getUid());
+                        DB.child("email").setValue(usuario.getEmail());
+                        DB.child("senha").setValue(usuario.getSenha());
+                        DB.child("nome").setValue(usuario.getNome());
+                        DB.child("dtNasc").setValue(usuario.getDtNasc());
+                        DB.child("sexo").setValue(usuario.getSenha());
+                        DB.child("cep").setValue(usuario.getCep());
+                        DB.child("cel").setValue(usuario.getCel());
                         //Chamando view perfil
                         Intent it = new Intent(cadastroActivity.this, perfilActivity.class);
                         FirebaseUser user = mAuth.getCurrentUser();
