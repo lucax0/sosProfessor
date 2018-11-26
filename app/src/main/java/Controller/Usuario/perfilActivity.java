@@ -22,14 +22,14 @@ public class perfilActivity extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth mAuth;
-    private TextView mNome;//Chamando o campo da view
-    private String email , nome;
+    private TextView mNome , mEmail;//Chamando o campo da view
     private Query databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfilaluno);
         mNome = findViewById(R.id.txt_nome);
+        mEmail = findViewById(R.id.txt_email);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
     }
@@ -39,8 +39,6 @@ public class perfilActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        email = currentUser.getEmail();
-        System.out.println(email);
         databaseReference = firebaseDatabase.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -51,6 +49,7 @@ public class perfilActivity extends AppCompatActivity {
                 System.out.println(dataSnapshot.getValue());
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
                 System.out.println(usuario.getNome());
+                carregarCampos(usuario);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -58,11 +57,11 @@ public class perfilActivity extends AppCompatActivity {
                 System.out.println("o erro é " + databaseError.getMessage());
             }
         });
-        carregarCampos();
     }
 
 
-    public void carregarCampos(){
-        //mNome.setText(usuario.getNome());
+    public void carregarCampos(Usuario usuario){
+        mNome.setText(usuario.getNome());
+        mEmail.setText(usuario.getEmail());
     }
 }

@@ -2,7 +2,7 @@ package Model.Usuario;
 
 import java.util.Date;
 
-public abstract class Usuario {
+public class Usuario {
 
     protected String id;
     protected String email;

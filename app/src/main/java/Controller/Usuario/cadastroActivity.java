@@ -76,22 +76,18 @@ public class cadastroActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
-
             return false;
         } else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
-
             return false;
         }
-
         if (TextUtils.isEmpty((password))) {
             mPasswordView.setError(getString(R.string.error_field_required));
-
             mPasswordView.setText("");
             return false;
+
         } else if (!isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
-
             mPasswordView.setText("");
             return false;
         }
@@ -130,7 +126,7 @@ public class cadastroActivity extends AppCompatActivity {
                         DB.child("senha").setValue(usuario.getSenha());
                         DB.child("nome").setValue(usuario.getNome());
                         DB.child("dtNasc").setValue(usuario.getDtNasc());
-                        DB.child("sexo").setValue(usuario.getSenha());
+                        DB.child("sexo").setValue(usuario.getSexo());
                         DB.child("cep").setValue(usuario.getCep());
                         DB.child("cel").setValue(usuario.getCel());
                         //Chamando view perfil
