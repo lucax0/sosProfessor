@@ -9,10 +9,9 @@
         android:id="@+id/textView2"
         android:layout_width="383dp"
         android:layout_height="48dp"
-        android:layout_weight="1"
         android:gravity="center"
         android:shadowColor="@color/colorAccent"
-        android:text="BEM VINDO!"
+        android:text="@string/bem_vindo"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorPrimary"
@@ -29,7 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="63dp"
-        android:text="Olá:"
+        android:text="@string/ol"
         android:textSize="24sp" />
 
     <TextView
@@ -40,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="108dp"
-        android:text="Seu email é:"
+        android:text="@string/seu_email"
         android:textSize="14sp" />
 
     <TextView
@@ -61,4 +60,46 @@
         android:layout_marginTop="44dp"
         android:layout_toEndOf="@+id/textView8"
         android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_ser_professor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="194dp"
+        android:onClick="btn_ser_professorOnClick"
+        android:text="@string/quero_ser_professor" />
+
+    <Button
+        android:id="@+id/btn_deslogar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="271dp"
+        android:layout_marginBottom="22dp"
+        android:text="@string/deslogar" />
+
+    <Button
+        android:id="@+id/btn_encontrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="207dp"
+        android:onClick="btn_encontrarOnClick"
+        android:text="@string/quero_encontrar_professor" />
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_deslogar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="271dp"
+        android:onClick="btn_menuOnClick"
+        android:text="@string/menu" />
 </RelativeLayout>
