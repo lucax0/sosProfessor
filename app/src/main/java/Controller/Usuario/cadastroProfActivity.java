@@ -61,7 +61,7 @@ public class cadastroProfActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 usuario = dataSnapshot.getValue(Usuario.class);
-                System.out.println(usuario.getNome());
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
