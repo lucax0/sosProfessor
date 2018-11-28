@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 
@@ -29,6 +30,7 @@ import Utils.MaskEditUtil;
 public class cadastroActivity extends AppCompatActivity {
 
     private EditText mEmailView ,mPasswordView, mNomeView,mDataView, mTelefoneView;
+    private CheckBox mProf;
 
     private boolean existeUsuario;
     String identificacaoUsuario;
@@ -56,6 +58,7 @@ public class cadastroActivity extends AppCompatActivity {
         mPasswordView =  findViewById(R.id.txt_senha);
         mDataView = findViewById(R.id.txt_nasc);
         mTelefoneView = findViewById(R.id.txt_num);
+        mProf = findViewById(R.id.chck_prof);
     }
 
     private boolean isEmailValid(String email) {
@@ -125,9 +128,15 @@ public class cadastroActivity extends AppCompatActivity {
                         DB.child("cep").setValue(usuario.getCep());
                         DB.child("cel").setValue(usuario.getCel());
                         //Chamando view perfil
-                        Intent it = new Intent(cadastroActivity.this, perfilActivity.class);
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        startActivity(it);
+                        if(!mProf.isChecked()){
+                            Intent it = new Intent(cadastroActivity.this, perfilActivity.class);
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(it);
+                        }else{
+                            Intent it = new Intent(cadastroActivity.this, cadastroProfActivity.class);
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(it);
+                        }
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.d("login", "signInWithEmail:failure", task.getException());

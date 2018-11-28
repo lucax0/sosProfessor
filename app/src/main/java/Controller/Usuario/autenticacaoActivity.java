@@ -31,19 +31,19 @@ public class autenticacaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_iautenticacao);
 
         //CARREGANDO VIEW
-        mEmailView = (EditText) findViewById(R.id.txt_email);
-        mPasswordView = (EditText) findViewById(R.id.txt_senha);
+        mEmailView =  findViewById(R.id.txt_email);
+        mPasswordView = findViewById(R.id.txt_senha);
         mAuth = FirebaseAuth.getInstance();
 
         //BOTOES
-       Button btn_entrar = (Button) findViewById(R.id.btn_entar);
+       Button btn_entrar =  findViewById(R.id.btn_entar);
         btn_entrar.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
             }
         });
-       Button btn_cad = (Button) findViewById(R.id.btn_cadastro);
+       Button btn_cad =  findViewById(R.id.btn_cadastro);
         btn_cad.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
