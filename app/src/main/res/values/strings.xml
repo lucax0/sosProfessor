@@ -3,6 +3,7 @@
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="erro_generico">Usuario ou senha invalidos</string>
+    <string name="erro_idBusca">Professor não encontrado</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>

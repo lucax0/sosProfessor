@@ -26,7 +26,7 @@ public class buscaprofessorActivity extends AppCompatActivity {
     private Query databaseReference;
     Professor professor;
     private EditText mID;
-    private TextView mNomeView;
+    private TextView mNomeView, mMateria, mNota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,8 @@ public class buscaprofessorActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         mID = findViewById(R.id.txt_id);
+        mMateria = findViewById(R.id.txt_materia);
+        mNota = findViewById(R.id.txt_nota);
         mNomeView = findViewById(R.id.txt_nome);
         Button btn_busca = findViewById(R.id.btn_busca);
         btn_busca.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,8 @@ public class buscaprofessorActivity extends AppCompatActivity {
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                mID.setError(getString(R.string.erro_idBusca));
+                mID.requestFocus();
                 System.out.println("The read failed: " + databaseError.getCode());
                 System.out.println("o erro é " + databaseError.getMessage());
             }
@@ -65,6 +69,8 @@ public class buscaprofessorActivity extends AppCompatActivity {
 
     public void carregarCampos(){
         mNomeView.setText(professor.getNome());
+        mMateria.setText(professor.getGraduacao());
+        mNota.setText(String.valueOf(professor.getNota())) ;
     }
 
 }
