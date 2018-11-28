@@ -24,6 +24,7 @@
         <activity android:name="Controller.Usuario.perfilActivity" />
         <activity android:name="Controller.Usuario.cadastroActivity"></activity>
         <activity android:name="Controller.Usuario.cadastroProfActivity"></activity>
+        <activity android:name="Controller.Usuario.menuActivity"></activity>
     </application>
 
 </manifest>

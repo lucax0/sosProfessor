@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 
 import com.br.fatec.sos_professores.R;
@@ -31,6 +32,7 @@ public class cadastroActivity extends AppCompatActivity {
 //TEM Q COLOCAR SCROLL!!!
     private EditText mEmailView ,mPasswordView, mNomeView,mDataView, mTelefoneView;
     private CheckBox mProf;
+    private Spinner mSexo;
 
     private boolean existeUsuario;//RECEBER RETORNO DO DB
 
@@ -59,6 +61,7 @@ public class cadastroActivity extends AppCompatActivity {
         mDataView = findViewById(R.id.txt_nasc);
         mTelefoneView = findViewById(R.id.txt_num);
         mProf = findViewById(R.id.chck_prof);
+        mSexo = findViewById(R.id.cmb_sexo);
     }
 
     private boolean isEmailValid(String email) {
@@ -102,7 +105,7 @@ public class cadastroActivity extends AppCompatActivity {
             usuario.setCel(mTelefoneView.getText().toString());
             usuario.setEmail(mEmailView.getText().toString());
             usuario.setCep("09810-360");//Falta o campo no cad
-            usuario.setSexo("Masculino");//arrumar botoes
+            usuario.setSexo(mSexo.getSelectedItem().toString());
             usuario.setDtNasc(new Date());//tranformar o txt em date ou converter em string ?
             usuario.setSenha(mPasswordView.getText().toString());
             criarUsuario(usuario);

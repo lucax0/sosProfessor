@@ -83,7 +83,7 @@ public class cadastroProfActivity extends AppCompatActivity {
             professor.setCep(usuario.getCep());
             professor.setSexo(usuario.getSexo());
             professor.setDtNasc(new Date());
-            professor.setSenha(usuario.getSexo());
+            professor.setSenha(usuario.getSenha());
             professor.setNota(5);
             professor.setGraduacao(mGraduacao.getText().toString());
             criarUsuarioProfessor(professor);
