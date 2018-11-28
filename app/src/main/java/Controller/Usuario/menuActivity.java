@@ -2,12 +2,8 @@ package Controller.Usuario;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import com.br.fatec.sos_professores.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +18,7 @@ public class menuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_imenu);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         Button btn_sair = findViewById(R.id.btn_logout);
@@ -39,6 +35,15 @@ public class menuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(menuActivity.this, perfilActivity.class);
+                startActivity(it);
+            }
+        });
+
+        Button btn_encontra = findViewById(R.id.btn_prof);
+        btn_encontra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(menuActivity.this, buscaprofessorActivity.class);
                 startActivity(it);
             }
         });

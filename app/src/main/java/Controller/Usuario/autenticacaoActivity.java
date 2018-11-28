@@ -107,10 +107,14 @@ public class autenticacaoActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startActivity(it);
                             } else {
-                                // If sign in fails, display a message to the user.
-                                Log.d("login", "signInWithEmail:failure", task.getException());
+                                mPasswordView.setError(getString(R.string.erro_generico));
+                                mPasswordView.setText("");
+                                mEmailView.setError(getString(R.string.erro_generico));
+                                mEmailView.requestFocus();
 
+                                Log.d("login", "signInWithEmail:failure", task.getException());
                             }
+
                         }
                     });
         }

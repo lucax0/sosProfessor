@@ -1,136 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="Usuario.Perfil.ibuscaprofessor"
-    tools:showIn="@layout/activity_ibuscaprofessor">
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:text="IDADE:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="171dp" />
-
-    <EditText
-        android:id="@+id/txt_idade"
-        android:layout_width="78dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView"
-        android:ems="10"
-        android:hint="XXanos"
-        android:inputType="text"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="160dp" />
-
-    <EditText
-        android:id="@+id/txt_nota"
-        android:layout_width="78dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView"
-        android:ems="10"
-        android:hint="NOTA"
-        android:inputType="text"
-        android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="389dp" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:text="Nome completo:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="71dp" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:text="Avaliaçao:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="400dp" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:text="Cursos:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="220dp" />
-
-    <EditText
-        android:id="@+id/txt_nome_prof"
-        android:layout_width="383dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView"
-        android:ems="10"
-        android:hint="EX: Nome do professor"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="105dp" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="Controller.Usuario.buscaprofessorActivity">
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="383dp"
-        android:layout_height="52dp"
-        android:gravity="center"
-        android:shadowColor="@color/colorAccent"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="BUSCA PROFESSOR"
+        android:textAlignment="center"
         android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp"
-        tools:text="BUSQUE SEU PROFESSOR" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-    <ListView
-        style="@style/Widget.AppCompat.ListView"
-        android:layout_width="383dp"
-        android:layout_height="118dp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="254dp" />
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="160dp"
+        android:text="DADOS DO SEU PROFESSOR:"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_aceitar"
+    <TextView
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aceitar Professor"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="474dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="51dp"
+        android:text="ID do Sistema:"
+        android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proximo Professor"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="474dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="248dp"
+        android:text="Nome do professor:"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/txt_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="248dp"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/txt_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView21"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-118dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btn_busca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView21"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-160dp"
+        android:text="Buscar" />
+</RelativeLayout>
