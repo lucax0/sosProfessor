@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
+
 
 import com.br.fatec.sos_professores.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,12 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Date;
 
 import Model.Usuario.Usuario;
+import Utils.MaskEditUtil;
 
 
 public class cadastroActivity extends AppCompatActivity {
 
     private EditText mEmailView ,mPasswordView, mNomeView,mDataView, mTelefoneView;
-
 
     private boolean existeUsuario;
     String identificacaoUsuario;
@@ -47,6 +47,7 @@ public class cadastroActivity extends AppCompatActivity {
                     criarModel();
                 }
             });
+         mTelefoneView.addTextChangedListener(MaskEditUtil.mask(mTelefoneView, MaskEditUtil.FORMAT_FONE));
     }
 
     public void incialiazarCampos(){
@@ -96,7 +97,7 @@ public class cadastroActivity extends AppCompatActivity {
             usuario.setNome(mNomeView.getText().toString());
             usuario.setCel(mTelefoneView.getText().toString());
             usuario.setEmail(mEmailView.getText().toString());
-            usuario.setCep("09810360");
+            usuario.setCep("09810-360");
             usuario.setSexo("Masculino");
             usuario.setDtNasc(new Date());
             usuario.setSenha(mPasswordView.getText().toString());

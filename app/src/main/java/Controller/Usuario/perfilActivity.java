@@ -25,7 +25,7 @@ public class perfilActivity extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth mAuth;
-    private TextView mNome , mEmail;//Chamando o campo da view
+    private TextView mNome , mEmail,mID;//Chamando o campo da view
     private Query databaseReference;
 
     @Override
@@ -34,16 +34,9 @@ public class perfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfilaluno);
         mNome = findViewById(R.id.txt_nome);
         mEmail = findViewById(R.id.txt_email);
+        mID = findViewById(R.id.txt_id);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        Button btn_prof = findViewById(R.id.btn_ser_professor);
-            btn_prof.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent it = new Intent(perfilActivity.this, cadastroProfActivity.class);
-                    startActivity(it);
-                }
-            });
     }
 
     @Override
@@ -71,6 +64,7 @@ public class perfilActivity extends AppCompatActivity {
     public void carregarCampos(Usuario usuario){
         mNome.setText(usuario.getNome());
         mEmail.setText(usuario.getEmail());
+        mID.setText(usuario.getId());
     }
 
     public void btn_encontrarOnClick(View v){

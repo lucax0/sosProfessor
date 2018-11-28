@@ -29,6 +29,7 @@ public class menuActivity extends AppCompatActivity {
         btn_sair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mAuth.getCurrentUser();
                 Intent it = new Intent(menuActivity.this, autenticacaoActivity.class);
                 startActivity(it);
             }
@@ -38,6 +39,7 @@ public class menuActivity extends AppCompatActivity {
         btn_perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mAuth.signOut();
                 Intent it = new Intent(menuActivity.this, perfilActivity.class);
                 startActivity(it);
             }

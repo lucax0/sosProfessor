@@ -56,7 +56,7 @@ public class cadastroProfActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        databaseReference = firebaseDatabase.getReference("professores").child(mAuth.getCurrentUser().getUid());
+        databaseReference = firebaseDatabase.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -91,7 +91,7 @@ public class cadastroProfActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         //Passando infos banco
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference DB = database.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
+        DatabaseReference DB = database.getReference("professores").child(mAuth.getCurrentUser().getUid());
         DB.child("id").setValue(mAuth.getCurrentUser().getUid());
         DB.child("email").setValue(professor.getEmail());
         DB.child("senha").setValue(professor.getSenha());
