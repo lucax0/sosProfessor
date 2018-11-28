@@ -1,54 +1,74 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center_horizontal"
-    android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" tools:context=".IAutenticacao"
-    android:weightSum="1">
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Controller.Usuario.autenticacaoActivity"
+    tools:layout_editor_absoluteY="25dp">
 
-    <!-- Login progress -->
-    <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" android:visibility="gone" />
-
-    <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
-        android:layout_height="123dp"
-        android:layout_weight="0.60">
-
-        <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:orientation="vertical">
-
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <AutoCompleteTextView android:id="@+id/txtEmail" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress" android:maxLines="1"
-        android:singleLine="true" />
-
-    <EditText android:id="@+id/txtSenha" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:hint="@string/prompt_password"
-        android:imeActionId="@+id/login"
-        android:imeActionLabel="@string/action_sign_in_short"
-        android:imeOptions="actionUnspecified" android:inputType="textPassword"
-        android:maxLines="1" android:singleLine="true" />
-
-    <Button android:id="@+id/btnLogin" style="?android:textAppearanceSmall"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="383dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:shadowColor="@color/colorAccent"
+        android:text="AREA DE LOGIN"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:text="Confirmar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="AREA DE LOGIN" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginRight="0dp"
+        android:ems="10"
+        android:hint="EMAIL"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/txt_senha"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txt_email"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="177dp"
+        android:ems="10"
+        android:hint="SENHA"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btn_entar"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txt_email"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="163dp"
+        android:text="Entrar" />
+
+    <Button
+        android:id="@+id/btn_cadastro"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txt_email"
+        android:layout_alignTop="@+id/btn_entar"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="63dp"
+        android:text="NOVA CONTA" />
+
+</RelativeLayout>

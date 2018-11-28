@@ -76,7 +76,7 @@
         android:text="@string/quero_ser_professor" />
 
     <Button
-        android:id="@+id/btn_deslogar"
+        android:id="@+id/btn_sair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -99,7 +99,7 @@
         android:id="@+id/btn_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btn_deslogar"
+        android:layout_alignTop="@+id/btn_sair"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="19dp"
