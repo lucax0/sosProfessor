@@ -20,7 +20,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.Query;
 import Model.Usuario.Usuario;
 
-
 public class perfilActivity extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase;
@@ -37,15 +36,22 @@ public class perfilActivity extends AppCompatActivity {
         mID = findViewById(R.id.txt_id);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        Button btn_menu = findViewById(R.id.btn_menu);
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(perfilActivity.this, menuActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         databaseReference = firebaseDatabase.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
-
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -65,16 +71,5 @@ public class perfilActivity extends AppCompatActivity {
         mNome.setText(usuario.getNome());
         mEmail.setText(usuario.getEmail());
         mID.setText(usuario.getId());
-    }
-
-    public void btn_encontrarOnClick(View v){
-        Intent it = new Intent(perfilActivity.this, cadastroActivity.class);
-        startActivity(it);
-
-    }
-    public void btn_menuOnClick(View v){
-        Intent it = new Intent(perfilActivity.this, menuActivity.class);
-        startActivity(it);
-
     }
 }

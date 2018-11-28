@@ -43,6 +43,7 @@ public class cadastroProfActivity extends AppCompatActivity {
         mGraduacao = findViewById(R.id.txt_grad);
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        //Botoes
         Button btn_salvar = findViewById(R.id.btn_submit);
         btn_salvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,7 @@ public class cadastroProfActivity extends AppCompatActivity {
                 criarModel(usuario);
             }
         });
+
     }
 
     @Override

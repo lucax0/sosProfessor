@@ -28,13 +28,13 @@ import Utils.MaskEditUtil;
 
 
 public class cadastroActivity extends AppCompatActivity {
-
+//TEM Q COLOCAR SCROLL!!!
     private EditText mEmailView ,mPasswordView, mNomeView,mDataView, mTelefoneView;
     private CheckBox mProf;
 
-    private boolean existeUsuario;
-    String identificacaoUsuario;
-    //instancia banco
+    private boolean existeUsuario;//RECEBER RETORNO DO DB
+
+    //instancia banco de autenticacao
     private FirebaseAuth mAuth;
 
     @Override
@@ -47,9 +47,9 @@ public class cadastroActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     criarModel();
-                }
-            });
-         mTelefoneView.addTextChangedListener(MaskEditUtil.mask(mTelefoneView, MaskEditUtil.FORMAT_FONE));
+                } });
+        mTelefoneView.addTextChangedListener(MaskEditUtil.mask(mTelefoneView, MaskEditUtil.FORMAT_FONE));//Formata o texto
+        mDataView.addTextChangedListener(MaskEditUtil.mask(mDataView, MaskEditUtil.FORMAT_DATE));
     }
 
     public void incialiazarCampos(){
@@ -72,7 +72,7 @@ public class cadastroActivity extends AppCompatActivity {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-        if (TextUtils.isEmpty(email)) {
+        if (TextUtils.isEmpty(email)) {//Valida o preenchimendo dos campos
             mEmailView.setError(getString(R.string.error_field_required));
             return false;
         } else if (!isEmailValid(email)) {
@@ -93,6 +93,7 @@ public class cadastroActivity extends AppCompatActivity {
     }
 
     protected void criarModel(){
+        //gera a model com os valores dos campos
         Usuario usuario = new Usuario() {
         };
         if (isCamposValidos()) {
@@ -100,9 +101,9 @@ public class cadastroActivity extends AppCompatActivity {
             usuario.setNome(mNomeView.getText().toString());
             usuario.setCel(mTelefoneView.getText().toString());
             usuario.setEmail(mEmailView.getText().toString());
-            usuario.setCep("09810-360");
-            usuario.setSexo("Masculino");
-            usuario.setDtNasc(new Date());
+            usuario.setCep("09810-360");//Falta o campo no cad
+            usuario.setSexo("Masculino");//arrumar botoes
+            usuario.setDtNasc(new Date());//tranformar o txt em date ou converter em string ?
             usuario.setSenha(mPasswordView.getText().toString());
             criarUsuario(usuario);
         }
@@ -112,10 +113,10 @@ public class cadastroActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
+                @Override//So cria um usuario depois do acesso ter sido criado pelo autenticador firebase
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        //Passando infos banco
+                        //Passando infos banco pegando da model que foi criada
                         usuario.setId(mAuth.getCurrentUser().getUid());
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference DB = database.getReference("usuarios").child(mAuth.getCurrentUser().getUid());
@@ -138,7 +139,6 @@ public class cadastroActivity extends AppCompatActivity {
                             startActivity(it);
                         }
                     } else {
-                        // If sign in fails, display a message to the user.
                         Log.d("login", "signInWithEmail:failure", task.getException());
                     }
                 }
