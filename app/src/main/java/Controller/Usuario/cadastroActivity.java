@@ -38,7 +38,7 @@ public class cadastroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.activity_icadastro);
         incialiazarCampos();
         Button btn_salvar = findViewById(R.id.btn_submit);
             btn_salvar.setOnClickListener(new View.OnClickListener() {
