@@ -44,14 +44,14 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btn_logout"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="142dp"
-        android:text="Ver Aulas" />
+        android:layout_marginStart="-60dp"
+        android:layout_marginBottom="144dp"
+        android:text="Ver Aulas(inativo)" />
 
     <Button
         android:id="@+id/btn_perfil"
